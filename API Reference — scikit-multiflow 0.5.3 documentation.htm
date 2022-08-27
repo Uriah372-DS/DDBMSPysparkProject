@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Reference — scikit-multiflow 0.5.3 documentation</title>
+    <link rel="stylesheet" href="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/basic.css" type="text/css">
+    <link rel="stylesheet" href="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/pygments.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/copybutton.css">
+    <link rel="stylesheet" type="text/css" href="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/skmultiflow.css">
+    <link rel="stylesheet" type="text/css" href="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/badge_only.css">
+    <script id="documentation_options" data-url_root="../" src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/documentation_options.js"></script>
+    <script src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/jquery.js"></script>
+    <script src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/underscore.js"></script>
+    <script src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/doctools.js"></script>
+    <script src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/language_data.js"></script>
+    <script src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/clipboard.min.js"></script>
+    <script src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/copybutton.js"></script>
+    <script async="async" src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/readthedocs-doc-embed.js"></script>
+    <script async="async" src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/MathJax"></script>
+    <link rel="shortcut icon" href="https://scikit-multiflow.readthedocs.io/en/stable/_static/skmultiflow-favicon.ico">
+    <link rel="index" title="Index" href="https://scikit-multiflow.readthedocs.io/en/stable/genindex.html">
+    <link rel="search" title="Search" href="https://scikit-multiflow.readthedocs.io/en/stable/search.html">
+    <link rel="next" title="skmultiflow.core.base.BaseEstimator" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.core.base.BaseEstimator.html">
+    <link rel="prev" title="scikit-multiflow map" href="https://scikit-multiflow.readthedocs.io/en/stable/user-guide/package_map.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+  
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="https://scikit-multiflow.readthedocs.io/en/stable/api/api.html">
+
+<link rel="stylesheet" href="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/readthedocs-doc-embed.css" type="text/css">
+
+<script type="text/javascript" src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/readthedocs-data.js"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = "api/api"
+READTHEDOCS_DATA['source_suffix'] = ".rst"
+</script>
+
+<script type="text/javascript" src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+<script src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/google-analytics_analytics.js" type="text/javascript" async=""></script><script src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/ethicalads.min.js" type="text/javascript" async="" id="ethicaladsjs"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80" data-new-gr-c-s-check-loaded="8.900.0" data-gr-ext-installed=""><div id="MathJax_Message" style="display: none;"></div>
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    
+    <a class="navbar-brand" href="https://scikit-multiflow.readthedocs.io/en/stable/index.html">
+      <img src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/skmultiflow-logo-wide.svg" class="logo" alt="logo">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="https://scikit-multiflow.readthedocs.io/en/stable/installation.html">Installation</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="https://scikit-multiflow.readthedocs.io/en/stable/user-guide/user-guide.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="">API Reference</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="https://github.com/scikit-multiflow/scikit-multiflow/blob/master/CONTRIBUTING.md">Contributing</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="https://scikit-multiflow.readthedocs.io/en/stable/whats_new.html">Releases</a>
+        </li>
+        
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://scikit-multiflow.github.io/">Webpage<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/scikit-multiflow/scikit-multiflow" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+</form>
+
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+    </ul>
+
+</div></nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#module-skmultiflow.core" class="nav-link">Core</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#module-skmultiflow.data" class="nav-link">Data</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#stream-generators" class="nav-link">Stream Generators</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2 active">
+            <a href="#learning-methods" class="nav-link active">Learning methods</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#module-skmultiflow.anomaly_detection" class="nav-link">Anomaly detection methods</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#module-skmultiflow.bayes" class="nav-link">Bayes methods</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#module-skmultiflow.lazy" class="nav-link">Lazy learning methods</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#module-skmultiflow.meta" class="nav-link">Ensemble methods</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#module-skmultiflow.neural_networks" class="nav-link">Neural Networks</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#module-skmultiflow.prototype" class="nav-link">Prototype based methods</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#module-skmultiflow.rules" class="nav-link">Rules based methods</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#module-skmultiflow.trees" class="nav-link">Trees based methods</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#module-skmultiflow.drift_detection" class="nav-link">Drift Detection</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#module-skmultiflow.evaluation" class="nav-link">Evaluation</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#module-skmultiflow.transform" class="nav-link">Transform</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#misc" class="nav-link">Misc</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#utilities" class="nav-link">Utilities</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<p>This is the API documentation for <code class="docutils literal notranslate"><span class="pre">scikit-multiflow</span></code>.</p>
+<div class="section" id="module-skmultiflow.core">
+<span id="core"></span><span id="data-ref"></span><h2>Core<a class="headerlink" href="#module-skmultiflow.core" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="#module-skmultiflow.core" title="skmultiflow.core"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skmultiflow.core</span></code></a> module covers core elements of <cite>scikit-multiflow</cite>.</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.core.base.BaseEstimator.html#skmultiflow.core.base.BaseEstimator" title="skmultiflow.core.base.BaseEstimator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.base.BaseEstimator</span></code></a></p></td>
+<td><p>Base Estimator class for compatibility with scikit-learn.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.core.BaseSKMObject.html#skmultiflow.core.BaseSKMObject" title="skmultiflow.core.BaseSKMObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.BaseSKMObject</span></code></a></p></td>
+<td><p>Base class for most objects in scikit-multiflow</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.core.ClassifierMixin.html#skmultiflow.core.ClassifierMixin" title="skmultiflow.core.ClassifierMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.ClassifierMixin</span></code></a></p></td>
+<td><p>Mixin class for all classifiers in scikit-multiflow.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.core.RegressorMixin.html#skmultiflow.core.RegressorMixin" title="skmultiflow.core.RegressorMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.RegressorMixin</span></code></a></p></td>
+<td><p>Mixin class for all regression estimators in scikit-multiflow.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.core.MetaEstimatorMixin.html#skmultiflow.core.MetaEstimatorMixin" title="skmultiflow.core.MetaEstimatorMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.MetaEstimatorMixin</span></code></a></p></td>
+<td><p>Mixin class for all meta estimators in scikit-multiflow.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.core.MultiOutputMixin.html#skmultiflow.core.MultiOutputMixin" title="skmultiflow.core.MultiOutputMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.MultiOutputMixin</span></code></a></p></td>
+<td><p>Mixin to mark estimators that support multioutput.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.core.Pipeline.html#skmultiflow.core.Pipeline" title="skmultiflow.core.Pipeline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.Pipeline</span></code></a></p></td>
+<td><p>[Experimental] Holds a set of sequential operation (transforms), followed by a single estimator.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-skmultiflow.data">
+<span id="data"></span><h2>Data<a class="headerlink" href="#module-skmultiflow.data" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="#module-skmultiflow.data" title="skmultiflow.data"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skmultiflow.data</span></code></a> module contains data stream methods including methods for
+batch-to-stream conversion and generators.</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.base_stream.Stream.html#skmultiflow.data.base_stream.Stream" title="skmultiflow.data.base_stream.Stream"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.base_stream.Stream</span></code></a></p></td>
+<td><p>Base Stream class.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.DataStream.html#skmultiflow.data.DataStream" title="skmultiflow.data.DataStream"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.DataStream</span></code></a></p></td>
+<td><p>Creates a stream from a data source.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.FileStream.html#skmultiflow.data.FileStream" title="skmultiflow.data.FileStream"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.FileStream</span></code></a></p></td>
+<td><p>Creates a stream from a file source.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.ConceptDriftStream.html#skmultiflow.data.ConceptDriftStream" title="skmultiflow.data.ConceptDriftStream"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.ConceptDriftStream</span></code></a></p></td>
+<td><p>Generates a stream with concept drift.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.TemporalDataStream.html#skmultiflow.data.TemporalDataStream" title="skmultiflow.data.TemporalDataStream"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.TemporalDataStream</span></code></a></p></td>
+<td><p>Create a temporal stream from a data source.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="stream-generators">
+<h3>Stream Generators<a class="headerlink" href="#stream-generators" title="Permalink to this headline">¶</a></h3>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.AGRAWALGenerator.html#skmultiflow.data.AGRAWALGenerator" title="skmultiflow.data.AGRAWALGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.AGRAWALGenerator</span></code></a></p></td>
+<td><p>Agrawal stream generator.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.AnomalySineGenerator.html#skmultiflow.data.AnomalySineGenerator" title="skmultiflow.data.AnomalySineGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.AnomalySineGenerator</span></code></a></p></td>
+<td><p>Simulate a stream with anomalies in sine waves</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.HyperplaneGenerator.html#skmultiflow.data.HyperplaneGenerator" title="skmultiflow.data.HyperplaneGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.HyperplaneGenerator</span></code></a></p></td>
+<td><p>Hyperplane stream generator.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.LEDGenerator.html#skmultiflow.data.LEDGenerator" title="skmultiflow.data.LEDGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.LEDGenerator</span></code></a></p></td>
+<td><p>LED stream generator.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.LEDGeneratorDrift.html#skmultiflow.data.LEDGeneratorDrift" title="skmultiflow.data.LEDGeneratorDrift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.LEDGeneratorDrift</span></code></a></p></td>
+<td><p>LED stream generator with concept drift.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.MIXEDGenerator.html#skmultiflow.data.MIXEDGenerator" title="skmultiflow.data.MIXEDGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.MIXEDGenerator</span></code></a></p></td>
+<td><p>Mixed data stream generator.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.RandomRBFGenerator.html#skmultiflow.data.RandomRBFGenerator" title="skmultiflow.data.RandomRBFGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.RandomRBFGenerator</span></code></a></p></td>
+<td><p>Random Radial Basis Function stream generator.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.RandomRBFGeneratorDrift.html#skmultiflow.data.RandomRBFGeneratorDrift" title="skmultiflow.data.RandomRBFGeneratorDrift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.RandomRBFGeneratorDrift</span></code></a></p></td>
+<td><p>Random Radial Basis Function stream generator with concept drift.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.RandomTreeGenerator.html#skmultiflow.data.RandomTreeGenerator" title="skmultiflow.data.RandomTreeGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.RandomTreeGenerator</span></code></a></p></td>
+<td><p>Random Tree stream generator.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.SEAGenerator.html#skmultiflow.data.SEAGenerator" title="skmultiflow.data.SEAGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.SEAGenerator</span></code></a></p></td>
+<td><p>SEA stream generator.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.SineGenerator.html#skmultiflow.data.SineGenerator" title="skmultiflow.data.SineGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.SineGenerator</span></code></a></p></td>
+<td><p>Sine stream generator.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.STAGGERGenerator.html#skmultiflow.data.STAGGERGenerator" title="skmultiflow.data.STAGGERGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.STAGGERGenerator</span></code></a></p></td>
+<td><p>STAGGER concepts stream generator.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.WaveformGenerator.html#skmultiflow.data.WaveformGenerator" title="skmultiflow.data.WaveformGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.WaveformGenerator</span></code></a></p></td>
+<td><p>Waveform stream generator.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.MultilabelGenerator.html#skmultiflow.data.MultilabelGenerator" title="skmultiflow.data.MultilabelGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.MultilabelGenerator</span></code></a></p></td>
+<td><p>Creates a multi-label stream.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.data.RegressionGenerator.html#skmultiflow.data.RegressionGenerator" title="skmultiflow.data.RegressionGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data.RegressionGenerator</span></code></a></p></td>
+<td><p>Creates a regression stream.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="learning-methods">
+<h2>Learning methods<a class="headerlink" href="#learning-methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-skmultiflow.anomaly_detection">
+<span id="anomaly-detection-methods"></span><h3>Anomaly detection methods<a class="headerlink" href="#module-skmultiflow.anomaly_detection" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-skmultiflow.anomaly_detection" title="skmultiflow.anomaly_detection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skmultiflow.anomaly_detection</span></code></a> module includes anomaly detection methods.</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.anomaly_detection.HalfSpaceTrees.html#skmultiflow.anomaly_detection.HalfSpaceTrees" title="skmultiflow.anomaly_detection.HalfSpaceTrees"><code class="xref py py-obj docutils literal notranslate"><span class="pre">anomaly_detection.HalfSpaceTrees</span></code></a></p></td>
+<td><p>Half–Space Trees.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-skmultiflow.bayes">
+<span id="bayes-methods"></span><h3>Bayes methods<a class="headerlink" href="#module-skmultiflow.bayes" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-skmultiflow.bayes" title="skmultiflow.bayes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skmultiflow.bayes</span></code></a> module includes Bayes learning methods.</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.bayes.NaiveBayes.html#skmultiflow.bayes.NaiveBayes" title="skmultiflow.bayes.NaiveBayes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bayes.NaiveBayes</span></code></a></p></td>
+<td><p>Naive Bayes classifier.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-skmultiflow.lazy">
+<span id="lazy-learning-methods"></span><h3>Lazy learning methods<a class="headerlink" href="#module-skmultiflow.lazy" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-skmultiflow.lazy" title="skmultiflow.lazy"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skmultiflow.lazy</span></code></a> module includes lazy learning methods in which generalization of the training
+data is delayed until a query is received, this is, on-demand.</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.lazy.KNNClassifier.html#skmultiflow.lazy.KNNClassifier" title="skmultiflow.lazy.KNNClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lazy.KNNClassifier</span></code></a></p></td>
+<td><p>k-Nearest Neighbors classifier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.lazy.KNNADWINClassifier.html#skmultiflow.lazy.KNNADWINClassifier" title="skmultiflow.lazy.KNNADWINClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lazy.KNNADWINClassifier</span></code></a></p></td>
+<td><p>K-Nearest Neighbors classifier with ADWIN change detector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.lazy.SAMKNNClassifier.html#skmultiflow.lazy.SAMKNNClassifier" title="skmultiflow.lazy.SAMKNNClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lazy.SAMKNNClassifier</span></code></a></p></td>
+<td><p>Self Adjusting Memory coupled with the kNN classifier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.lazy.KNNRegressor.html#skmultiflow.lazy.KNNRegressor" title="skmultiflow.lazy.KNNRegressor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lazy.KNNRegressor</span></code></a></p></td>
+<td><p>k-Nearest Neighbors regressor.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-skmultiflow.meta">
+<span id="ensemble-methods"></span><h3>Ensemble methods<a class="headerlink" href="#module-skmultiflow.meta" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-skmultiflow.meta" title="skmultiflow.meta"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skmultiflow.meta</span></code></a> module includes meta learning methods.</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.AccuracyWeightedEnsembleClassifier.html#skmultiflow.meta.AccuracyWeightedEnsembleClassifier" title="skmultiflow.meta.AccuracyWeightedEnsembleClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.AccuracyWeightedEnsembleClassifier</span></code></a></p></td>
+<td><p>Accuracy Weighted Ensemble classifier</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.AdaptiveRandomForestClassifier.html#skmultiflow.meta.AdaptiveRandomForestClassifier" title="skmultiflow.meta.AdaptiveRandomForestClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.AdaptiveRandomForestClassifier</span></code></a></p></td>
+<td><p>Adaptive Random Forest classifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.AdaptiveRandomForestRegressor.html#skmultiflow.meta.AdaptiveRandomForestRegressor" title="skmultiflow.meta.AdaptiveRandomForestRegressor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.AdaptiveRandomForestRegressor</span></code></a></p></td>
+<td><p>Adaptive Random Forest regressor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.AdditiveExpertEnsembleClassifier.html#skmultiflow.meta.AdditiveExpertEnsembleClassifier" title="skmultiflow.meta.AdditiveExpertEnsembleClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.AdditiveExpertEnsembleClassifier</span></code></a></p></td>
+<td><p>Additive Expert ensemble classifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.BatchIncrementalClassifier.html#skmultiflow.meta.BatchIncrementalClassifier" title="skmultiflow.meta.BatchIncrementalClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.BatchIncrementalClassifier</span></code></a></p></td>
+<td><p>Batch Incremental ensemble classifier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.ClassifierChain.html#skmultiflow.meta.ClassifierChain" title="skmultiflow.meta.ClassifierChain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.ClassifierChain</span></code></a></p></td>
+<td><p>Classifier Chains for multi-label learning.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.ProbabilisticClassifierChain.html#skmultiflow.meta.ProbabilisticClassifierChain" title="skmultiflow.meta.ProbabilisticClassifierChain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.ProbabilisticClassifierChain</span></code></a></p></td>
+<td><p>Probabilistic Classifier Chains for multi-label learning.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.MonteCarloClassifierChain.html#skmultiflow.meta.MonteCarloClassifierChain" title="skmultiflow.meta.MonteCarloClassifierChain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.MonteCarloClassifierChain</span></code></a></p></td>
+<td><p>Monte Carlo Sampling Classifier Chains for multi-label learning.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.DynamicWeightedMajorityClassifier.html#skmultiflow.meta.DynamicWeightedMajorityClassifier" title="skmultiflow.meta.DynamicWeightedMajorityClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.DynamicWeightedMajorityClassifier</span></code></a></p></td>
+<td><p>Dynamic Weighted Majority ensemble classifier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.LearnPPNSEClassifier.html#skmultiflow.meta.LearnPPNSEClassifier" title="skmultiflow.meta.LearnPPNSEClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.LearnPPNSEClassifier</span></code></a></p></td>
+<td><p>Learn++.NSE ensemble classifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.LearnPPClassifier.html#skmultiflow.meta.LearnPPClassifier" title="skmultiflow.meta.LearnPPClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.LearnPPClassifier</span></code></a></p></td>
+<td><p>Learn++ ensemble classifier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.LeveragingBaggingClassifier.html#skmultiflow.meta.LeveragingBaggingClassifier" title="skmultiflow.meta.LeveragingBaggingClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.LeveragingBaggingClassifier</span></code></a></p></td>
+<td><p>Leveraging Bagging ensemble classifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.MultiOutputLearner.html#skmultiflow.meta.MultiOutputLearner" title="skmultiflow.meta.MultiOutputLearner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.MultiOutputLearner</span></code></a></p></td>
+<td><p>Multi-Output Learner for multi-target classification or regression.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.OnlineAdaC2Classifier.html#skmultiflow.meta.OnlineAdaC2Classifier" title="skmultiflow.meta.OnlineAdaC2Classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.OnlineAdaC2Classifier</span></code></a></p></td>
+<td><p>Online AdaC2 ensemble classifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.OnlineBoostingClassifier.html#skmultiflow.meta.OnlineBoostingClassifier" title="skmultiflow.meta.OnlineBoostingClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.OnlineBoostingClassifier</span></code></a></p></td>
+<td><p>Online Boosting ensemble classifier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.OnlineCSB2Classifier.html#skmultiflow.meta.OnlineCSB2Classifier" title="skmultiflow.meta.OnlineCSB2Classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.OnlineCSB2Classifier</span></code></a></p></td>
+<td><p>Online CSB2 ensemble classifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.OnlineRUSBoostClassifier.html#skmultiflow.meta.OnlineRUSBoostClassifier" title="skmultiflow.meta.OnlineRUSBoostClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.OnlineRUSBoostClassifier</span></code></a></p></td>
+<td><p>Online RUSBoost ensemble classifier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.OnlineSMOTEBaggingClassifier.html#skmultiflow.meta.OnlineSMOTEBaggingClassifier" title="skmultiflow.meta.OnlineSMOTEBaggingClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.OnlineSMOTEBaggingClassifier</span></code></a></p></td>
+<td><p>Online SMOTEBagging ensemble classifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.OnlineUnderOverBaggingClassifier.html#skmultiflow.meta.OnlineUnderOverBaggingClassifier" title="skmultiflow.meta.OnlineUnderOverBaggingClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.OnlineUnderOverBaggingClassifier</span></code></a></p></td>
+<td><p>Online Under-Over-Bagging ensemble classifier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.OzaBaggingClassifier.html#skmultiflow.meta.OzaBaggingClassifier" title="skmultiflow.meta.OzaBaggingClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.OzaBaggingClassifier</span></code></a></p></td>
+<td><p>Oza Bagging ensemble classifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.OzaBaggingADWINClassifier.html#skmultiflow.meta.OzaBaggingADWINClassifier" title="skmultiflow.meta.OzaBaggingADWINClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.OzaBaggingADWINClassifier</span></code></a></p></td>
+<td><p>Oza Bagging ensemble classifier with ADWIN change detector.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.RegressorChain.html#skmultiflow.meta.RegressorChain" title="skmultiflow.meta.RegressorChain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.RegressorChain</span></code></a></p></td>
+<td><p>Regressor Chains for multi-output learning.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.meta.StreamingRandomPatchesClassifier.html#skmultiflow.meta.StreamingRandomPatchesClassifier" title="skmultiflow.meta.StreamingRandomPatchesClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meta.StreamingRandomPatchesClassifier</span></code></a></p></td>
+<td><p>Streaming Random Patches ensemble classifier.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-skmultiflow.neural_networks">
+<span id="neural-networks"></span><h3>Neural Networks<a class="headerlink" href="#module-skmultiflow.neural_networks" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-skmultiflow.neural_networks" title="skmultiflow.neural_networks"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skmultiflow.neural_networks</span></code></a> module includes learning methods based on Neural Networks.</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.neural_networks.PerceptronMask.html#skmultiflow.neural_networks.PerceptronMask" title="skmultiflow.neural_networks.PerceptronMask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neural_networks.PerceptronMask</span></code></a></p></td>
+<td><p>Mask for sklearn.linear_model.Perceptron.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-skmultiflow.prototype">
+<span id="prototype-based-methods"></span><h3>Prototype based methods<a class="headerlink" href="#module-skmultiflow.prototype" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-skmultiflow.prototype" title="skmultiflow.prototype"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skmultiflow.prototype</span></code></a> module includes prototype-based learning methods.</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.prototype.RobustSoftLearningVectorQuantization.html#skmultiflow.prototype.RobustSoftLearningVectorQuantization" title="skmultiflow.prototype.RobustSoftLearningVectorQuantization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prototype.RobustSoftLearningVectorQuantization</span></code></a></p></td>
+<td><p>Robust Soft Learning Vector Quantization for Streaming and Non-Streaming Data.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-skmultiflow.rules">
+<span id="rules-based-methods"></span><h3>Rules based methods<a class="headerlink" href="#module-skmultiflow.rules" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-skmultiflow.rules" title="skmultiflow.rules"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skmultiflow.rules</span></code></a> module includes rule-based learning methods.</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.rules.VeryFastDecisionRulesClassifier.html#skmultiflow.rules.VeryFastDecisionRulesClassifier" title="skmultiflow.rules.VeryFastDecisionRulesClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rules.VeryFastDecisionRulesClassifier</span></code></a></p></td>
+<td><p>Very Fast Decision Rules classifier.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-skmultiflow.trees">
+<span id="trees-based-methods"></span><h3>Trees based methods<a class="headerlink" href="#module-skmultiflow.trees" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#module-skmultiflow.trees" title="skmultiflow.trees"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skmultiflow.trees</span></code></a> module includes learning methods based on trees.</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.trees.HoeffdingTreeClassifier.html#skmultiflow.trees.HoeffdingTreeClassifier" title="skmultiflow.trees.HoeffdingTreeClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trees.HoeffdingTreeClassifier</span></code></a></p></td>
+<td><p>Hoeffding Tree or Very Fast Decision Tree classifier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.trees.HoeffdingAdaptiveTreeClassifier.html#skmultiflow.trees.HoeffdingAdaptiveTreeClassifier" title="skmultiflow.trees.HoeffdingAdaptiveTreeClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trees.HoeffdingAdaptiveTreeClassifier</span></code></a></p></td>
+<td><p>Hoeffding Adaptive Tree classifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.trees.ExtremelyFastDecisionTreeClassifier.html#skmultiflow.trees.ExtremelyFastDecisionTreeClassifier" title="skmultiflow.trees.ExtremelyFastDecisionTreeClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trees.ExtremelyFastDecisionTreeClassifier</span></code></a></p></td>
+<td><p>Extremely Fast Decision Tree classifier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.trees.LabelCombinationHoeffdingTreeClassifier.html#skmultiflow.trees.LabelCombinationHoeffdingTreeClassifier" title="skmultiflow.trees.LabelCombinationHoeffdingTreeClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trees.LabelCombinationHoeffdingTreeClassifier</span></code></a></p></td>
+<td><p>Label Combination Hoeffding Tree for multi-label classification.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.trees.HoeffdingTreeRegressor.html#skmultiflow.trees.HoeffdingTreeRegressor" title="skmultiflow.trees.HoeffdingTreeRegressor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trees.HoeffdingTreeRegressor</span></code></a></p></td>
+<td><p>Hoeffding Tree regressor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.trees.HoeffdingAdaptiveTreeRegressor.html#skmultiflow.trees.HoeffdingAdaptiveTreeRegressor" title="skmultiflow.trees.HoeffdingAdaptiveTreeRegressor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trees.HoeffdingAdaptiveTreeRegressor</span></code></a></p></td>
+<td><p>Hoeffding Adaptive Tree regressor.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.trees.iSOUPTreeRegressor.html#skmultiflow.trees.iSOUPTreeRegressor" title="skmultiflow.trees.iSOUPTreeRegressor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trees.iSOUPTreeRegressor</span></code></a></p></td>
+<td><p>Incremental Structured Output Prediction Tree (iSOUP-Tree) for multi-target regression.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.trees.StackedSingleTargetHoeffdingTreeRegressor.html#skmultiflow.trees.StackedSingleTargetHoeffdingTreeRegressor" title="skmultiflow.trees.StackedSingleTargetHoeffdingTreeRegressor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trees.StackedSingleTargetHoeffdingTreeRegressor</span></code></a></p></td>
+<td><p>Stacked Single-target Hoeffding Tree regressor.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="module-skmultiflow.drift_detection">
+<span id="drift-detection"></span><h2>Drift Detection<a class="headerlink" href="#module-skmultiflow.drift_detection" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="#module-skmultiflow.drift_detection" title="skmultiflow.drift_detection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skmultiflow.drift_detection</span></code></a> module includes methods for Concept Drift Detection.</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.drift_detection.ADWIN.html#skmultiflow.drift_detection.ADWIN" title="skmultiflow.drift_detection.ADWIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drift_detection.ADWIN</span></code></a></p></td>
+<td><p>Adaptive Windowing method for concept drift detection.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.drift_detection.DDM.html#skmultiflow.drift_detection.DDM" title="skmultiflow.drift_detection.DDM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drift_detection.DDM</span></code></a></p></td>
+<td><p>Drift Detection Method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.drift_detection.EDDM.html#skmultiflow.drift_detection.EDDM" title="skmultiflow.drift_detection.EDDM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drift_detection.EDDM</span></code></a></p></td>
+<td><p>Early Drift Detection Method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.drift_detection.HDDM_A.html#skmultiflow.drift_detection.HDDM_A" title="skmultiflow.drift_detection.HDDM_A"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drift_detection.HDDM_A</span></code></a></p></td>
+<td><p>Drift Detection Method based on Hoeffding’s bounds with moving average-test.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.drift_detection.HDDM_W.html#skmultiflow.drift_detection.HDDM_W" title="skmultiflow.drift_detection.HDDM_W"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drift_detection.HDDM_W</span></code></a></p></td>
+<td><p>Drift Detection Method based on Hoeffding’s bounds with moving weighted average-test.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.drift_detection.KSWIN.html#skmultiflow.drift_detection.KSWIN" title="skmultiflow.drift_detection.KSWIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drift_detection.KSWIN</span></code></a></p></td>
+<td><p>Kolmogorov-Smirnov Windowing method for concept drift detection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.drift_detection.PageHinkley.html#skmultiflow.drift_detection.PageHinkley" title="skmultiflow.drift_detection.PageHinkley"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drift_detection.PageHinkley</span></code></a></p></td>
+<td><p>Page-Hinkley method for concept drift detection.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-skmultiflow.evaluation">
+<span id="evaluation"></span><h2>Evaluation<a class="headerlink" href="#module-skmultiflow.evaluation" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="#module-skmultiflow.evaluation" title="skmultiflow.evaluation"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skmultiflow.evaluation</span></code></a> module includes evaluation methods for stream learning.</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.evaluation.EvaluateHoldout.html#skmultiflow.evaluation.EvaluateHoldout" title="skmultiflow.evaluation.EvaluateHoldout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluation.EvaluateHoldout</span></code></a></p></td>
+<td><p>The holdout evaluation method or periodic holdout evaluation method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.evaluation.EvaluatePrequential.html#skmultiflow.evaluation.EvaluatePrequential" title="skmultiflow.evaluation.EvaluatePrequential"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluation.EvaluatePrequential</span></code></a></p></td>
+<td><p>The prequential evaluation method or interleaved test-then-train method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.evaluation.EvaluatePrequentialDelayed.html#skmultiflow.evaluation.EvaluatePrequentialDelayed" title="skmultiflow.evaluation.EvaluatePrequentialDelayed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluation.EvaluatePrequentialDelayed</span></code></a></p></td>
+<td><p>The prequential evaluation delayed method.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-skmultiflow.transform">
+<span id="transform"></span><h2>Transform<a class="headerlink" href="#module-skmultiflow.transform" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="#module-skmultiflow.transform" title="skmultiflow.transform"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skmultiflow.transform</span></code></a> module covers methods that perform data transformations.</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.transform.MissingValuesCleaner.html#skmultiflow.transform.MissingValuesCleaner" title="skmultiflow.transform.MissingValuesCleaner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform.MissingValuesCleaner</span></code></a></p></td>
+<td><p>Fill missing values with some defined value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.transform.OneHotToCategorical.html#skmultiflow.transform.OneHotToCategorical" title="skmultiflow.transform.OneHotToCategorical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform.OneHotToCategorical</span></code></a></p></td>
+<td><p>Transform one-hot encoded data into categorical feature(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.transform.WindowedMinmaxScaler.html#skmultiflow.transform.WindowedMinmaxScaler" title="skmultiflow.transform.WindowedMinmaxScaler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform.WindowedMinmaxScaler</span></code></a></p></td>
+<td><p>Transform features by scaling each feature to a given range.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.transform.WindowedStandardScaler.html#skmultiflow.transform.WindowedStandardScaler" title="skmultiflow.transform.WindowedStandardScaler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform.WindowedStandardScaler</span></code></a></p></td>
+<td><p>Standardize features by removing the mean and scaling to unit variance.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="misc">
+<h2>Misc<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="utilities">
+<h3>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h3>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://scikit-multiflow.readthedocs.io/en/stable/api/generated/skmultiflow.core.clone.html#skmultiflow.core.clone" title="skmultiflow.core.clone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.clone</span></code></a></p></td>
+<td><p>Constructs a new estimator with the same parameters.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    <script src="API%20Reference%20%E2%80%94%20scikit-multiflow%200.5.3%20documentation_files/index.js"></script>
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+        Last updated on Jun 17, 2020.<br>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.1.1.<br>
+    </p>
+  </div>
+</footer>
+  
+<!-- Inserted RTD Footer -->
+
+<div class="injected">
+
+  
+  <div class="rst-versions rst-badge" data-toggle="rst-versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book">&nbsp;</span>
+      v: stable
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+        <dd>
+          <a href="https://scikit-multiflow.readthedocs.io/en/latest/api/api.html">latest</a>
+        </dd>
+        
+        <dd class="rtd-current-item">
+          <a href="https://scikit-multiflow.readthedocs.io/en/stable/api/api.html">stable</a>
+        </dd>
+        
+      </dl>
+      
+      
+
+      
+      
+      
+
+      
+      <dl>
+        
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="https://readthedocs.org/projects/scikit-multiflow/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/scikit-multiflow/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/scikit-multiflow/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/scikit-multiflow/scikit-multiflow/blob/a7e316d1cc79988a6df40da35312e00f6c4eabb2/docs/api/api.rst">View</a>
+        </dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/scikit-multiflow/search/" method="get">
+              <input type="text" name="q" aria-label="Search docs" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+      <hr>
+
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org/">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+    </div>
+  </div>
+  
+
+</div>
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
